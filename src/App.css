@@ -85,3 +85,19 @@ body {
 .navbar-brand{
   cursor: pointer;
 }
+
+
+@media (max-width: 700px) {
+  .movies{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top-box .price, .box h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 500px) {
+  .btn{
+    padding: 0 1.3rem;
+  }
+}
