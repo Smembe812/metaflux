@@ -1,22 +1,87 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #1B1B1B;
+  --base: #f8f9fa;
+  --white: #ffffff
 }
 
-.App-logo {
-  height: 40vmin;
+html{
+  scroll-behavior: smooth 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background: var(--primary-color) !important; }
+
+.hero-section{
   color: white;
+  height: 100%;
+  width: 100%; }
+
+.hero-section .input-submit, .hero-section input[type="file" i], .about-section .input-submit, .about-section input[type="file" i] {
+  display: none; }
+
+  .profile-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: minmax(auto); }
+  
+.movies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1em;
+  justify-content: center; }
+
+.movies .movie {
+  width: 100%;
+  justify-self: center; 
+  transition: 150ms;
+  cursor: pointer
 }
 
-.App-link {
-  color: #09d3ac;
+.movie > img:hover{
+  transform: scale(1.2)
+}
+
+.result{
+  cursor: pointer
+}
+
+.result:hover{
+  border: white
+}
+
+
+.side__nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  right: 0;
+  background: #1b1b1b;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 0px 1px 1px 1px #454748;
+  color: white;}
+
+.side__nav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #343a40;
+  display: block;
+  transition: 0.3s; }
+
+.side__nav a:hover {
+  font-weight: 600; }
+
+.side__nav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px; }
+
+.navbar-brand{
+  cursor: pointer;
 }

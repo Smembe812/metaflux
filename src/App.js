@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+
 import './App.css';
 
-function App() {
+import DragNDrop from './components/DragNDrop'
+import DropElement from './components/DropElement'
+import SearchResults from './components/SearchResults'
+import Header from './components/Header';
+
+function App(props) {
+  const [results, setResults] = useState(null)
+
+  const getResults = (results) => {
+    setResults(results)
+  }
+
+  const handleHeaderClick = (value) => {
+    setResults(null)
+  }
+
+  useEffect(()=>{
+    //render when value of results change
+  }, [results])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        results === null ?
+        <DragNDrop onResults={getResults}>
+          <DropElement/>
+        </DragNDrop>
+
+        :
+        <>
+          <Header onHeaderClick={handleHeaderClick}/>
+          <SearchResults results={results}/>
+        </>
+      }
     </div>
   );
 }
