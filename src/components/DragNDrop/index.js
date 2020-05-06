@@ -76,7 +76,7 @@ export default function DragNDrop(props) {
     )
     
     return (
-        <div {...getRootProps()}>
+        <div {...getRootProps()} style={{position: 'relative', top:0, bottom: 0}}>
             <input {...getInputProps()} />
             {
                 

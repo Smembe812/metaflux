@@ -8,7 +8,6 @@ function Movies ({movies}) {
     const [movieId, setMovieId] = useState(null)
 
     useEffect(() => {
-        console.log(document.getElementsByTagName('link')[2])
         document.getElementsByTagName('link')[2].disabled = true; 
     }, [movieId])
 
